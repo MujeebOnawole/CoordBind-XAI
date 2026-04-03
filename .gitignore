@@ -2,8 +2,6 @@ __pycache__/
 *.pyc
 *.pyo
 *.pt
-*.csv
-*.json
 *.egg-info/
 dist/
 build/
@@ -11,4 +9,4 @@ build/
 *.log
 *.err
 output/
-results/
+slurm/

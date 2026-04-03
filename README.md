@@ -64,69 +64,48 @@ logK1 range: -1.91 to 29.70. Scaffold split: 15,207 train / 2,226 val / 2,355 te
 ## Repository Structure
 
 ```
-TMC_binding/
+metal-binding-xai/
 |
-|-- data/
-|   |-- stability_constants_dative_clean.csv   # Final dataset (19,788 rows)
+|-- config.py                     # Constants, metal properties, search space
+|-- build_data.py                 # SMILES -> PyG graphs (formal charge from RDKit)
+|-- model.py                      # RGCNStability with triple readout
+|-- loss.py                       # MSE loss
+|-- data_module.py                # Data loading, splitting
+|-- hyper.py                      # Optuna 25-trial search
+|-- stat_val.py                   # 3x5 CV (15 models)
+|-- final_eval.py                 # Best-per-fold ensemble evaluation
+|-- xai.py                        # Perturbation-based XAI + Scenario A
+|-- analyze_xai_chemistry.py      # Post-XAI chemical validation (5 analyses)
 |
-|-- stability_gnn/                    # Model training and evaluation
-|   |-- config.py                     # Constants, search space, Configuration
-|   |-- build_data.py                 # SMILES -> PyG graphs (formal charge from RDKit)
-|   |-- model.py                      # RGCNStability with triple readout
-|   |-- loss.py                       # MSE loss
-|   |-- data_module.py                # Data loading, splitting
-|   |-- hyper.py                      # Optuna 25-trial search
-|   |-- stat_val.py                   # 3x5 CV (15 models)
-|   |-- final_eval.py                 # Best-per-fold ensemble evaluation
-|   |-- xai.py                        # Perturbation-based XAI + Scenario A
-|   |-- analyze_xai_chemistry.py      # Post-XAI chemical validation (5 analyses)
-|   |-- slurm/                        # HPC job scripts
-|
-|-- hf_space/                         # Gradio web app (deployed to HuggingFace)
-|   |-- app.py                        # Main UI (Predict, XAI, Metal Comparison, Batch, About)
-|   |-- model.py                      # Inference-only RGCNStability
-|   |-- graph_builder.py              # SMILES -> PyG graph with node_roles
-|   |-- config.py                     # 1 property, 32 metals, 18 popular ligands
-|   |-- substructure_xai.py           # XAI for single property
-|   |-- visualize.py                  # 2D molecular drawing
-|   |-- models/                       # 5 checkpoints + manifest
-|
-|-- manuscript/                       # Paper draft + SI
-|   |-- stability_constant_gnn_xai_draft.docx   # Main manuscript (8 figures)
-|   |-- supporting_information.docx              # SI (9 tables)
-|   |-- figures/                                 # All generated figures
-|
-|-- Results/output/                   # Run 2 results (final)
-|-- Results_charge_undefnd/output/    # Run 1 results (for comparison)
-|
-|-- methods.md                        # Methods diary (640 lines)
-|-- project_status.md                 # Current status and results
-|-- plan.txt                          # Execution plan
-|-- demo_guide_JKMRC.txt              # Mining industry demo guide
+|-- results/                      # Model outputs
+|   |-- best_hyperparameters.json
+|   |-- ensemble_summary.json
+|   |-- dataset_stats.json
+|   |-- test_predictions.csv       # 2,355 test set predictions
+|   |-- cv_fold_results.csv        # 15-fold CV results
+|   |-- cv_statistics.json
+|   |-- xai_summary.json
+|   |-- xai_results_logK1.csv      # Full XAI attributions (19,788 complexes)
+|   |-- chemistry_validation_summary.json
 ```
 
-## Running the Pipeline
+## Pipeline
 
-### Local (data curation)
+The training pipeline runs in 5 sequential steps:
 
-```bash
-python convert_iupac_to_dative.py
-python process_nist_srd46.py
-python curate_final_dataset.py
+```
+Step 0: build_data.py    — Parse SMILES, extract features, scaffold split
+Step 1: hyper.py         — 25 Optuna trials (3-fold internal CV)
+Step 2: stat_val.py      — 3-repeat x 5-fold CV (15 models)
+Step 3: final_eval.py    — Best-per-fold ensemble on held-out test set
+Step 4: xai.py           — Perturbation-based XAI on full dataset
 ```
 
-### HPC (model training)
+### Post-XAI Chemical Validation
 
 ```bash
-cd /scratch/.../TMC_BE/slurm
-bash run_all.sh 0    # full pipeline: build_data -> hyper -> CV -> eval -> XAI
-```
-
-### Post-XAI Analysis (local)
-
-```bash
-python stability_gnn/analyze_xai_chemistry.py \
-    --results_dir Results/output/xai_results \
+python analyze_xai_chemistry.py \
+    --results_dir results/ \
     --dataset_csv data/stability_constants_dative_clean.csv
 ```
 
