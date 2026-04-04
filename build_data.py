@@ -439,9 +439,16 @@ def construct_tmc_graph(
 
     # Parse SMILES with RDKit
     # RDKit handles dative bonds (->) as DATIVE bond type
-    mol = Chem.MolFromSmiles(smiles)
+    # Use relaxed sanitization: metals like Ga, In, Tl, Be have non-standard
+    # valences that RDKit's strict sanitizer rejects when dative bonds are present.
+    mol = Chem.MolFromSmiles(smiles, sanitize=False)
     if mol is None:
         raise ValueError(f"Invalid SMILES: {smiles[:100]}...")
+    try:
+        Chem.SanitizeMol(mol, sanitizeOps=Chem.SanitizeFlags.SANITIZE_ALL ^
+                         Chem.SanitizeFlags.SANITIZE_PROPERTIES)
+    except Exception as e:
+        raise ValueError(f"Sanitization failed for {smiles[:100]}: {e}")
 
     num_atoms = mol.GetNumAtoms()
     if num_atoms == 0:
@@ -618,7 +625,13 @@ def build_dataset(config):
             # Metal: atom with symbol in TRANSITION_METALS
             # Donor: non-metal atom that has a DATIVE bond to a metal
             # Ligand: everything else
-            mol = Chem.MolFromSmiles(smiles)
+            mol = Chem.MolFromSmiles(smiles, sanitize=False)
+            if mol is not None:
+                try:
+                    Chem.SanitizeMol(mol, sanitizeOps=Chem.SanitizeFlags.SANITIZE_ALL ^
+                                     Chem.SanitizeFlags.SANITIZE_PROPERTIES)
+                except Exception:
+                    mol = None
             n_nodes = graph.x.shape[0]
             node_roles = torch.zeros(n_nodes, dtype=torch.long)  # default: ligand (0)
 
@@ -678,7 +691,13 @@ def build_dataset(config):
 
     def get_ligand_scaffold(smiles):
         """Extract Murcko scaffold of the ligand (metal removed)."""
-        mol = Chem.MolFromSmiles(smiles)
+        mol = Chem.MolFromSmiles(smiles, sanitize=False)
+        if mol is not None:
+            try:
+                Chem.SanitizeMol(mol, sanitizeOps=Chem.SanitizeFlags.SANITIZE_ALL ^
+                                 Chem.SanitizeFlags.SANITIZE_PROPERTIES)
+            except Exception:
+                mol = None
         if mol is None:
             return 'unknown'
 

@@ -16,6 +16,34 @@ import os
 import torch
 from dataclasses import dataclass, field
 from typing import List, Dict
+from rdkit import Chem
+
+
+# =============================================================================
+# PERIODIC-TABLE-DERIVED METAL DETECTION
+# =============================================================================
+
+# Non-metals that appear in SMILES brackets but are NOT coordination metals.
+_NON_METALS = {
+    'H', 'He', 'B', 'C', 'N', 'O', 'F', 'Ne',
+    'Si', 'P', 'S', 'Cl', 'Ar',
+    'Ge', 'As', 'Se', 'Br', 'Kr',
+    'Te', 'I', 'Xe', 'At', 'Rn', 'Og',
+}
+
+
+def is_metal(symbol: str) -> bool:
+    """Check if an element symbol is a metal using the periodic table.
+
+    Returns True for all metals: alkali, alkaline earth, transition,
+    lanthanide, actinide, and post-transition metals.
+    """
+    try:
+        pt = Chem.GetPeriodicTable()
+        num = pt.GetAtomicNumber(symbol)
+        return num > 0 and symbol not in _NON_METALS
+    except Exception:
+        return False
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -95,14 +123,13 @@ METAL_PROPERTIES = {
     "other": {"atomic_num": 0, "electronegativity": 1.5, "common_coord": 6, "ionic_radius": 0.8},
 }
 
+# Derived from the periodic table — no hardcoded list needed.
 TRANSITION_METALS = {
-    'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn',
-    'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd',
-    'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg',
-    'La', 'Ce', 'Pr', 'Nd', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu',
-    'Th', 'U',
-    'Al', 'Ga', 'In', 'Sn', 'Pb', 'Bi',
-    'Mg', 'Ca', 'Sr', 'Ba',
+    symbol for symbol in [
+        Chem.GetPeriodicTable().GetElementSymbol(z)
+        for z in range(1, 119)
+    ]
+    if is_metal(symbol)
 }
 
 # =============================================================================

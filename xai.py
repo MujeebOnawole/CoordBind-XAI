@@ -43,6 +43,7 @@ import logging
 from config import get_config, LOGK1_STATS
 from model import RGCNStability
 from data_module import load_dataset, get_data_splits
+from build_data import construct_tmc_graph
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -520,11 +521,64 @@ def run_xai_analysis(config, top_k=5, full_dataset=False):
     return results
 
 
+def run_xai_external(config, external_csv, top_k=5):
+    """Run XAI analysis on an external CSV (zero-shot prediction).
+
+    The CSV must have columns: smiles, logK1, metal_type
+    Graphs are built on-the-fly from SMILES using construct_tmc_graph().
+    """
+    logger.info(f"Loading external CSV: {external_csv}")
+    ext_df = pd.read_csv(external_csv)
+    logger.info(f"Entries: {len(ext_df)}")
+    logger.info(f"Metals: {ext_df['metal_type'].value_counts().to_dict()}")
+
+    # Build graphs on-the-fly
+    graphs = []
+    valid_rows = []
+    failed = 0
+    for idx, row in tqdm(ext_df.iterrows(), total=len(ext_df), desc="Building graphs"):
+        try:
+            graph = construct_tmc_graph(row['smiles'], row.get('metal_type'))
+            graph.y = torch.tensor([row['logK1']], dtype=torch.float32)
+            graphs.append(graph)
+            valid_rows.append(idx)
+        except Exception as e:
+            failed += 1
+            logger.warning(f"Row {idx} failed: {e}")
+
+    logger.info(f"Built {len(graphs)} graphs ({failed} failed)")
+    meta_df = ext_df.loc[valid_rows].reset_index(drop=True)
+
+    # Load ensemble
+    checkpoints_dir = os.path.join(config.output_dir, 'cv_results', 'checkpoints')
+    hp_path = os.path.join(config.output_dir, 'best_hyperparameters.json')
+    hp = json.load(open(hp_path)) if os.path.exists(hp_path) else {}
+    node_feature_dim = graphs[0].x.shape[1]
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    models, best_model = load_ensemble_models(
+        checkpoints_dir, config, hp, device, node_feature_dim, top_k
+    )
+
+    analyzer = XAIAnalyzer(models, best_model, config, device)
+
+    # Output to a separate directory
+    csv_stem = os.path.splitext(os.path.basename(external_csv))[0]
+    xai_dir = os.path.join(config.output_dir, f'xai_zeroshot_{csv_stem}')
+    results = analyzer.analyze_batch(graphs, meta_df, output_dir=xai_dir)
+
+    logger.info(f"Results saved to: {xai_dir}")
+    return results
+
+
 def main():
     parser = argparse.ArgumentParser(description='XAI for logK1 stability constants')
     parser.add_argument('--top_k', type=int, default=5)
     parser.add_argument('--full_dataset', action='store_true', default=False)
     parser.add_argument('--output_dir', type=str, default=None)
+    parser.add_argument('--external_csv', type=str, default=None,
+                        help='Path to external CSV for zero-shot XAI prediction. '
+                             'CSV must have columns: smiles, logK1, metal_type')
     args = parser.parse_args()
 
     config = get_config()
@@ -535,10 +589,14 @@ def main():
     logger.info("logK1 Stability Constant - XAI Analysis")
     logger.info("=" * 60)
     logger.info(f"Ensemble size: {args.top_k}")
-    logger.info(f"Full dataset: {args.full_dataset}")
     logger.info(f"Start: {datetime.now()}")
 
-    run_xai_analysis(config, args.top_k, args.full_dataset)
+    if args.external_csv:
+        logger.info(f"ZERO-SHOT MODE: {args.external_csv}")
+        run_xai_external(config, args.external_csv, args.top_k)
+    else:
+        logger.info(f"Full dataset: {args.full_dataset}")
+        run_xai_analysis(config, args.top_k, args.full_dataset)
 
     logger.info(f"End: {datetime.now()}")
 
