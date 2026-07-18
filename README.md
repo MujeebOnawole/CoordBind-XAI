@@ -1,6 +1,8 @@
-# Predicting Metal-Ligand Binding Strength and Coordination Sites from SMILES with Explainable AI
+# CoordBind-XAI
 
-A relational graph convolutional network that predicts the first stability
+**Predicting metal-ligand binding strength and coordination sites from SMILES with explainable AI.**
+
+CoordBind-XAI is a relational graph convolutional network that predicts the first stability
 constant (log K1) **and** the donor atoms of a metal-ligand complex from a plain
 ligand SMILES string, with per-atom explanations for both tasks.
 
@@ -139,8 +141,8 @@ Run 3. Earlier runs used a smaller 57-metal dataset and are not shipped.
 ## Citation
 
 > Onawole, A. T.; Sulaiman, K. O.; Alli, Y. A.; Aderinto, S. O.; Anumah, A. O.
-> "Predicting Metal-Ligand Binding Strength and Coordination Sites from SMILES
-> with Explainable AI." 2026. Preprint.
+> "CoordBind-XAI: Predicting Metal-Ligand Binding Strength and Coordination
+> Sites from SMILES." 2026. Preprint.
 
 ## License
 
