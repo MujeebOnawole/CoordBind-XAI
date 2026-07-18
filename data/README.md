@@ -23,20 +23,14 @@ The curated 99-ligand benchmark used for coordination probing.
 
 ## Sources and terms
 
-| Source | Contribution | Terms |
+| Source | Contribution |
 |---|---|---|
-| IUPAC Stability Constants Database, via Karunaratne et al. 2025 (JCIM) | 32,459 entries pre-curation | Check the source publication's terms |
-| LOGKPREDICT, Zahariev et al. 2024 | IUPAC (5,096) and NIST (1,662) subsets | Per the LOGKPREDICT release |
-| NIST Standard Reference Database 46 | 8,999 records resolved, 7,404 converted | US Government public domain; NIST asks that SRD 46 be cited |
+| IUPAC Stability Constants Database, via Karunaratne et al. 2025 (JCIM) | 32,459 entries pre-curation | 
+| LOGKPREDICT, Zahariev et al. 2024 | IUPAC (5,096) and NIST (1,662) subsets | 
+| NIST Standard Reference Database 46 | 8,999 records resolved, 7,404 converted |
 | Manual curation | 176 Ga/In/Tl/Be entries | This work |
-| PubChem PUG-REST | Name-to-SMILES resolution | NCBI usage policy; queries rate-limited to 5/s |
+| PubChem PUG-REST | Name-to-SMILES resolution | NCBI usage policy; |
 
 The **Toney coordination benchmark is not redistributed here.** Obtain it from
-Zenodo record 13840776 and place it under `data/toney/`; the download helpers in
-`src/data_prep/` will do this for you.
+Zenodo record 13840776 and place it under `data/toney/`; 
 
-> **Before making this repository public**, confirm redistribution rights for
-> the merged CSV, in particular the IUPAC-derived portion. NIST SRD 46 is public
-> domain, but the IUPAC database has its own terms. If redistribution is not
-> permitted, ship the curation scripts and a download helper instead of the
-> merged file.
