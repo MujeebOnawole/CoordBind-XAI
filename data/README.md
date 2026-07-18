@@ -24,13 +24,13 @@ The curated 99-ligand benchmark used for coordination probing.
 ## Sources and terms
 
 | Source | Contribution |
-|---|---|---|
-| IUPAC Stability Constants Database, via Karunaratne et al. 2025 (JCIM) | 32,459 entries pre-curation | 
-| LOGKPREDICT, Zahariev et al. 2024 | IUPAC (5,096) and NIST (1,662) subsets | 
+|---|---|
+| IUPAC Stability Constants Database, via Karunaratne et al. 2025 (JCIM) | 32,459 entries pre-curation |
+| LOGKPREDICT, Zahariev et al. 2024 | IUPAC (5,096) and NIST (1,662) subsets |
 | NIST Standard Reference Database 46 | 8,999 records resolved, 7,404 converted |
-| Manual curation | 176 Ga/In/Tl/Be entries | This work |
-| PubChem PUG-REST | Name-to-SMILES resolution | NCBI usage policy; |
+| Manual curation (this work) | 176 Ga/In/Tl/Be entries |
+| PubChem PUG-REST | Name-to-SMILES resolution |
 
 The **Toney coordination benchmark is not redistributed here.** Obtain it from
-Zenodo record 13840776 and place it under `data/toney/`; 
-
+Zenodo record 13840776 and place it under `data/toney/`; the download helpers
+in `src/data_prep/` will do this for you.

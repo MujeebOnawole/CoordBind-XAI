@@ -97,7 +97,6 @@ results/canonical    Run 3 metrics, predictions, XAI attributions
 results/ablations    T1/T2/T3 architecture ablations
 results/diagnostics  calibration, variance decomposition, scaffold overlap
 results/coord_only   Toney benchmark evaluation
-figures/          publication figures
 ```
 
 ## Pipeline
