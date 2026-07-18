@@ -1,0 +1,20 @@
+{
+  "n_repeats": 3,
+  "n_folds": 5,
+  "balanced_acc": {
+    "mean": 0.9772092353939361,
+    "std": 0.0009949125294016793,
+    "min": 0.9754289138478263,
+    "max": 0.9787111884052542
+  },
+  "hyperparameters": {
+    "hidden_dim": 256,
+    "num_conv_layers": 6,
+    "dropout": 0.12079677871105902,
+    "learning_rate": 0.000640059506370828,
+    "weight_decay": 1.3194359723863117e-06,
+    "batch_size": 32,
+    "best_balanced_acc": 0.9755242007287889,
+    "node_feature_dim": 120
+  }
+}

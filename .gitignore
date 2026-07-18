@@ -1,12 +1,26 @@
 __pycache__/
 *.pyc
 *.pyo
-*.pt
 *.egg-info/
 dist/
 build/
 .eggs/
 *.log
 *.err
+*.out
 output/
 slurm/
+*.pt
+*.ckpt
+
+# Deployment artefacts: the web tool is maintained separately and must never
+# be committed here (it contains a Hugging Face write token).
+hf_space/
+hf_token.txt
+*.token
+.env
+
+# Large intermediates
+data/toney/
+ligand_data_final_*.csv
+*_graphs.pt

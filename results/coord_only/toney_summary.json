@@ -1,0 +1,74 @@
+{
+  "n_evaluated": 6616,
+  "n_parse_failures": 0,
+  "ensemble_size": 5,
+  "micro_metrics": {
+    "overall_acc": 0.9790845461896098,
+    "donor_recall": 0.9711038568492323,
+    "neg_acc": 0.9800158011314739,
+    "balanced_acc": 0.9755598289903531
+  },
+  "molecular_acc": 0.7457678355501813,
+  "dent_correct": 0.752720677146312,
+  "comparison": {
+    "toney_ref": {
+      "balanced_acc": 0.969,
+      "donor_recall": 0.946,
+      "mol_acc": 0.848
+    },
+    "run3_cu": {
+      "balanced_acc": 0.76,
+      "donor_recall": 0.563,
+      "mol_acc": 0.318
+    },
+    "run4_cu": {
+      "balanced_acc": 0.777,
+      "donor_recall": 0.594,
+      "mol_acc": 0.349
+    }
+  },
+  "per_denticity": {
+    "1": {
+      "count": 1467,
+      "donor_recall": 0.983640081799591,
+      "neg_acc": 0.9651108960060604,
+      "balanced_acc": 0.9743754889028257,
+      "mol_acc": 0.6802999318336742
+    },
+    "2": {
+      "count": 2557,
+      "donor_recall": 0.9824012514665624,
+      "neg_acc": 0.9837269104685629,
+      "balanced_acc": 0.9830640809675626,
+      "mol_acc": 0.7809933515838874
+    },
+    "3": {
+      "count": 1202,
+      "donor_recall": 0.988075429839157,
+      "neg_acc": 0.9853329422117924,
+      "balanced_acc": 0.9867041860254746,
+      "mol_acc": 0.7695507487520798
+    },
+    "4": {
+      "count": 901,
+      "donor_recall": 0.9841842397336293,
+      "neg_acc": 0.9865640258027727,
+      "balanced_acc": 0.9853741327682011,
+      "mol_acc": 0.7835738068812431
+    },
+    "5": {
+      "count": 183,
+      "donor_recall": 0.966120218579235,
+      "neg_acc": 0.9808031774051191,
+      "balanced_acc": 0.9734616979921771,
+      "mol_acc": 0.6721311475409836
+    },
+    "6": {
+      "count": 306,
+      "donor_recall": 0.8730936819172114,
+      "neg_acc": 0.9567755385684503,
+      "balanced_acc": 0.9149346102428308,
+      "mol_acc": 0.6045751633986928
+    }
+  }
+}

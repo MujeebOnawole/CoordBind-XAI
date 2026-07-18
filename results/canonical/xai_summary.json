@@ -1,0 +1,18 @@
+{
+  "n_samples": 19964,
+  "property_mean": 6.76,
+  "cv_threshold": 0.1,
+  "agreement_threshold": 0.7,
+  "dual_criteria": {
+    "criterion_1": ">=70% of ALL node attributions have expected direction",
+    "criterion_2": "Mean signed attribution has expected direction",
+    "logic": "EITHER criterion satisfies agreement"
+  },
+  "scenario_distribution": {
+    "C": 3948,
+    "D": 593,
+    "A": 13105,
+    "B": 2318
+  },
+  "scenario_A_pct": 65.64315768383089
+}

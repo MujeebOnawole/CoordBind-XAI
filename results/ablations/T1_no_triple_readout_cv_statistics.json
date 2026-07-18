@@ -1,0 +1,24 @@
+{
+  "n_repeats": 3,
+  "n_folds": 5,
+  "total_folds": 15,
+  "node_feature_dim": 120,
+  "logK1_mae": {
+    "mean": 1.0602333148320515,
+    "std": 0.025954371758658643,
+    "min": 1.026311993598938,
+    "max": 1.123012900352478,
+    "unit": "log10"
+  },
+  "hyperparameters": {
+    "hidden_dim": 256,
+    "num_conv_layers": 4,
+    "dropout": 0.05625781235633281,
+    "learning_rate": 0.0012948276586858072,
+    "weight_decay": 2.66523190855042e-06,
+    "batch_size": 32,
+    "best_mae": 1.210584322611491,
+    "node_feature_dim": 100,
+    "_ablation_note": "triple readout replaced with global mean pool in model.py."
+  }
+}

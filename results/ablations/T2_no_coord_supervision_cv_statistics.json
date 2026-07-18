@@ -1,0 +1,25 @@
+{
+  "n_repeats": 3,
+  "n_folds": 5,
+  "total_folds": 15,
+  "node_feature_dim": 120,
+  "logK1_mae": {
+    "mean": 1.0385101040204365,
+    "std": 0.027310582908822365,
+    "min": 0.9843170046806335,
+    "max": 1.0887435674667358,
+    "unit": "log10"
+  },
+  "hyperparameters": {
+    "hidden_dim": 256,
+    "num_conv_layers": 4,
+    "dropout": 0.05625781235633281,
+    "learning_rate": 0.0012948276586858072,
+    "weight_decay": 2.66523190855042e-06,
+    "batch_size": 32,
+    "best_mae": 1.210584322611491,
+    "node_feature_dim": 100,
+    "coord_weight": 0.0,
+    "_ablation_note": "coord_weight forced to 0 for binding-only ablation."
+  }
+}

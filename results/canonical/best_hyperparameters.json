@@ -1,0 +1,11 @@
+{
+  "hidden_dim": 256,
+  "num_conv_layers": 4,
+  "dropout": 0.05400472179188115,
+  "learning_rate": 0.001865442108265286,
+  "weight_decay": 2.7624271772079923e-05,
+  "batch_size": 32,
+  "coord_weight": 1.246741492667473,
+  "best_mae": 1.212297002474467,
+  "node_feature_dim": 120
+}

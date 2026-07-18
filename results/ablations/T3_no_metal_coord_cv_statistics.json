@@ -1,0 +1,24 @@
+{
+  "n_repeats": 3,
+  "n_folds": 5,
+  "total_folds": 15,
+  "node_feature_dim": 120,
+  "logK1_mae": {
+    "mean": 1.0634281635284424,
+    "std": 0.027350146116353093,
+    "min": 1.0107929706573486,
+    "max": 1.09647536277771,
+    "unit": "log10"
+  },
+  "hyperparameters": {
+    "hidden_dim": 256,
+    "num_conv_layers": 4,
+    "dropout": 0.05625781235633281,
+    "learning_rate": 0.0012948276586858072,
+    "weight_decay": 2.66523190855042e-06,
+    "batch_size": 32,
+    "best_mae": 1.210584322611491,
+    "node_feature_dim": 100,
+    "_ablation_note": "DATIVE bonds remapped to SINGLE in build_data.py. METAL_COORD weight matrix gets zero training signal. Tests whether the dative-vs-covalent edge distinction contributes to log K1 accuracy under from-scratch retraining."
+  }
+}

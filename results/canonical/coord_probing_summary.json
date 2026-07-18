@@ -1,0 +1,156 @@
+{
+  "methods": {
+    "A_coord_head": {
+      "description": "Probe each candidate with a METAL_COORD edge, use coord_head probability to rank. The coord head evaluates whether each atom belongs in a coordination environment.",
+      "results": {
+        "Cu+2": {
+          "metal": "Cu+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.8,
+          "positive_accuracy": 70.7,
+          "negative_accuracy": 97.4,
+          "balanced_accuracy": 84.0,
+          "molecular_accuracy": 43.3,
+          "auto_dent_molecular_accuracy": 25.8
+        },
+        "Ni+2": {
+          "metal": "Ni+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.7,
+          "positive_accuracy": 70.3,
+          "negative_accuracy": 97.3,
+          "balanced_accuracy": 83.8,
+          "molecular_accuracy": 42.3,
+          "auto_dent_molecular_accuracy": 34.0
+        },
+        "Fe+2": {
+          "metal": "Fe+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.5,
+          "positive_accuracy": 69.1,
+          "negative_accuracy": 97.2,
+          "balanced_accuracy": 83.1,
+          "molecular_accuracy": 42.3,
+          "auto_dent_molecular_accuracy": 32.0
+        },
+        "Zn+2": {
+          "metal": "Zn+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.8,
+          "positive_accuracy": 71.1,
+          "negative_accuracy": 97.4,
+          "balanced_accuracy": 84.2,
+          "molecular_accuracy": 42.3,
+          "auto_dent_molecular_accuracy": 35.1
+        },
+        "Co+2": {
+          "metal": "Co+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.7,
+          "positive_accuracy": 70.3,
+          "negative_accuracy": 97.3,
+          "balanced_accuracy": 83.8,
+          "molecular_accuracy": 42.3,
+          "auto_dent_molecular_accuracy": 33.0
+        }
+      }
+    },
+    "B_plausibility": {
+      "description": "Probe each candidate with a METAL_COORD edge, use predicted logK1 as a chemical plausibility signal. Valid coordination produces reasonable logK1; invalid coordination does not.",
+      "results": {
+        "Cu+2": {
+          "metal": "Cu+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.2,
+          "positive_accuracy": 67.9,
+          "negative_accuracy": 97.1,
+          "balanced_accuracy": 82.5,
+          "molecular_accuracy": 38.1,
+          "auto_dent_molecular_accuracy": 5.2
+        },
+        "Ni+2": {
+          "metal": "Ni+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.1,
+          "positive_accuracy": 67.5,
+          "negative_accuracy": 97.0,
+          "balanced_accuracy": 82.2,
+          "molecular_accuracy": 39.2,
+          "auto_dent_molecular_accuracy": 5.2
+        },
+        "Fe+2": {
+          "metal": "Fe+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 93.8,
+          "positive_accuracy": 65.9,
+          "negative_accuracy": 96.8,
+          "balanced_accuracy": 81.4,
+          "molecular_accuracy": 39.2,
+          "auto_dent_molecular_accuracy": 5.2
+        },
+        "Zn+2": {
+          "metal": "Zn+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 94.1,
+          "positive_accuracy": 67.1,
+          "negative_accuracy": 97.0,
+          "balanced_accuracy": 82.0,
+          "molecular_accuracy": 38.1,
+          "auto_dent_molecular_accuracy": 5.2
+        },
+        "Co+2": {
+          "metal": "Co+2",
+          "n_ligands": 97,
+          "n_failed": 2,
+          "overall_accuracy": 93.8,
+          "positive_accuracy": 65.5,
+          "negative_accuracy": 96.8,
+          "balanced_accuracy": 81.1,
+          "molecular_accuracy": 39.2,
+          "auto_dent_molecular_accuracy": 6.2
+        }
+      }
+    }
+  },
+  "toney_reference": {
+    "overall_accuracy": 98.8,
+    "positive_accuracy": 94.6,
+    "negative_accuracy": 99.3,
+    "balanced_accuracy": 96.9,
+    "molecular_accuracy": 84.8
+  },
+  "evaluation": {
+    "dataset": "/workspace/data/example_ligands.csv",
+    "n_ligands": 99,
+    "metals_tested": [
+      "Cu",
+      "Ni",
+      "Fe",
+      "Zn",
+      "Co"
+    ],
+    "selection": "greedy_sequential",
+    "denticity_mode": "known (true denticity for fair comparison)"
+  },
+  "training_comparison": {
+    "toney": {
+      "n_training": 70069,
+      "labels": "explicit coordination",
+      "metal_aware": false
+    },
+    "ours": {
+      "n_training": 19964,
+      "labels": "stability constants only",
+      "metal_aware": true
+    }
+  }
+}

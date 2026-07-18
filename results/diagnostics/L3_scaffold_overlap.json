@@ -1,0 +1,42 @@
+{
+  "task": "BIND_L3_SCAFFOLD_OVERLAP",
+  "n_total_unique_scaffolds": 417,
+  "per_partition": {
+    "training": {
+      "n": 15207,
+      "n_scaffolds": 414
+    },
+    "validation": {
+      "n": 2226,
+      "n_scaffolds": 4
+    },
+    "test": {
+      "n": 2355,
+      "n_scaffolds": 3
+    }
+  },
+  "overlap": {
+    "training__validation": {
+      "n_shared_scaffolds": 2,
+      "shared_scaffolds_examples": [
+        "ACYCLIC",
+        "C1CCCCC1"
+      ]
+    },
+    "training__test": {
+      "n_shared_scaffolds": 2,
+      "shared_scaffolds_examples": [
+        "ACYCLIC",
+        "C1CCCCC1"
+      ]
+    },
+    "validation__test": {
+      "n_shared_scaffolds": 2,
+      "shared_scaffolds_examples": [
+        "ACYCLIC",
+        "C1CCCCC1"
+      ]
+    }
+  },
+  "note": "Scaffold column is pre-computed from the binding paper split (Murcko on metal-stripped ligand). ACYCLIC denotes linear chelators that have no Murcko ring system. Overlap of ACYCLIC and C1CCCCC1 across partitions is the deliberate 80:10:10 internal split for scaffold groups exceeding 10% of the dataset (Methods 2.3)."
+}
