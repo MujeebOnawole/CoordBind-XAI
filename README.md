@@ -23,7 +23,7 @@ complex carries a ligand framework absent from training).
 | Pearson r | **0.935** |
 | Cross-validated MAE | **1.040 ± 0.030** (3 × 5 folds) |
 | Mean ensemble uncertainty | 0.480 log K |
-| Scenario A (trustworthy) | 65.6% |
+| Scenario A (trustworthy) | **49.1%** of held-out test predictions (65.6% over the full dataset) |
 | Metals | **61** |
 | Training data | **19,964** experimental stability constants at 25 °C |
 | Split | 15,346 train / 2,248 val / 2,370 test |
@@ -43,13 +43,15 @@ held-out 6,616-ligand test set:
 
 ### Chemistry validation
 
+All figures below are computed on the canonical Run 3 model.
+
 | Test | Result |
 |---|---|
-| Irving-Williams series | 87% pairwise accuracy (Mn < Fe < Co < Ni < Cu > Zn) |
+| Irving-Williams series | 86.5% pairwise accuracy over 4,034 pairs (Mn < Fe < Co < Ni < Cu > Zn) |
 | Lanthanide contraction | 80.1% positive trend across 382 shared ligands |
-| HSAB (cyanide) | Hg(II) 16.0 ≫ Cu(II) 9.4 ≫ Ca(II) 2.6 |
-| Donor dominance | donor attribution 0.948 vs backbone 0.740 |
-| Oxidation-state resolution | encoding formal charge cuts Fe MAE by 54% |
+| HSAB (cyanide) | Hg(II) 14.4 ≫ Cu(II) 8.6 ≫ Ca(II) 1.6 |
+| Donor dominance | donor attribution 1.038 vs backbone 0.746 |
+| Oxidation-state resolution | encoding formal charge cuts Fe MAE by 36% and Cr MAE by 65% |
 
 ### Architecture ablations
 
@@ -137,6 +139,12 @@ here; download it from Zenodo record 13840776.
 
 `PROVENANCE.md` records which run produced which numbers. The canonical run is
 Run 3. Earlier runs used a smaller 57-metal dataset and are not shipped.
+
+Every number in this README is Run 3. Two exceptions are stated where they
+appear, both because the comparison baseline predates the metal expansion: the
+hardcoded-charge ablation was evaluated on the earlier 2,355-entry test
+partition, and the donor-dominance variance decomposition was run on the earlier
+15,207-complex training split.
 
 ## Citation
 
