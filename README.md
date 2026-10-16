@@ -88,7 +88,12 @@ default donor threshold, which was lowered to 0.50 for that ligand, and the
 Pt(II)/Pd(II) order is reversed. Per-metal predictions, ensemble spread,
 Scenario labels and the reference values are in
 `results/validation/dft_validation_results.json`
-(manuscript Table 8 and Table S13).
+(manuscript Table 8 and Table S13). The script that produced that file,
+`src/validation/run_dft_external_validation.py`, is kept as the record of how
+the comparison was run; it drives the web tool's prediction functions directly,
+so it is not a standalone entry point. To make predictions for your own ligands
+and metals, use the web tool:
+https://huggingface.co/spaces/catenate/metal-ligand-binding
 
 ## Scope
 
@@ -126,7 +131,7 @@ results/ablations    T1/T2/T3 architecture ablations
 results/diagnostics  calibration, variance decomposition, scaffold overlap
 results/coord_only   Toney benchmark evaluation
 results/validation   DFT ranking benchmark (Zhang et al. 2026)
-src/validation/      script that regenerates results/validation/
+src/validation/      record of how results/validation/ was produced (see Results)
 ```
 
 ## Pipeline
@@ -142,28 +147,6 @@ src/binding/analyze_xai_chemistry.py   Irving-Williams, HSAB, lanthanide checks
 
 The coordination-only model follows the same order under `src/coord_only/`,
 ending at `eval_toney.py`.
-
-### Regenerating the DFT validation
-
-`src/validation/run_dft_external_validation.py` calls the same prediction
-functions as the web tool so that the published numbers and the deployed tool
-cannot drift apart. The web tool and its checkpoints live in a separate
-repository, so clone it and point the script at the clone:
-
-```
-git clone https://huggingface.co/spaces/catenate/metal-ligand-binding
-export COORDBIND_WEBTOOL_DIR=/path/to/metal-ligand-binding
-python src/validation/run_dft_external_validation.py
-```
-
-It writes `results/validation/dft_validation_results.json`. Reference DFT
-binding energies and experimental log K values are transcribed inside the
-script from the benchmark paper.
-
-Scripts resolve `data/` from the repository root automatically. Training was run
-on a SLURM cluster; the job scripts are deliberately not included because they
-carry site-specific account and path details. Each step is a plain Python entry
-point and can be run directly.
 
 ## Requirements
 
