@@ -1,0 +1,1499 @@
+{
+  "raw": {
+    "BQ_auto_uncorrected": {
+      "ligand": "BQ_auto",
+      "ligand_smiles": "O=C1C=CC=CC1=O",
+      "donor_threshold": 0.75,
+      "donor_source": "automatic",
+      "predicted_donor_atoms": [
+        "O",
+        "O"
+      ],
+      "predicted_donor_probs": [
+        0.836,
+        0.836
+      ],
+      "automatic_donor_indices": [
+        0,
+        7
+      ],
+      "automatic_donor_atoms": [
+        "O",
+        "O"
+      ],
+      "all_atom_donor_probs": [
+        [
+          "O",
+          0.836
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.969
+        ],
+        [
+          "C",
+          0.972
+        ],
+        [
+          "C",
+          0.972
+        ],
+        [
+          "C",
+          0.969
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "O",
+          0.836
+        ]
+      ],
+      "predicted_donor_indices": [
+        0,
+        7
+      ],
+      "metals": [
+        {
+          "metal": "Mg",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Mg+2]<-[O]=C2C=C1",
+          "logK1_mean": 2.219,
+          "logK1_std": 0.373,
+          "cv": 0.168,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Mn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Mn+2]<-[O]=C2C=C1",
+          "logK1_mean": 3.535,
+          "logK1_std": 1.015,
+          "cv": 0.2872,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Fe",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Fe+2]<-[O]=C2C=C1",
+          "logK1_mean": 7.321,
+          "logK1_std": 2.316,
+          "cv": 0.3164,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Co",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Co+2]<-[O]=C2C=C1",
+          "logK1_mean": 4.269,
+          "logK1_std": 0.89,
+          "cv": 0.2085,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ni",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Ni+2]<-[O]=C2C=C1",
+          "logK1_mean": 3.99,
+          "logK1_std": 0.806,
+          "cv": 0.202,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Zn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Zn+2]<-[O]=C2C=C1",
+          "logK1_mean": 4.674,
+          "logK1_std": 0.938,
+          "cv": 0.2006,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Cd+2]<-[O]=C2C=C1",
+          "logK1_mean": 4.245,
+          "logK1_std": 0.849,
+          "cv": 0.2001,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cu",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Cu+2]<-[O]=C2C=C1",
+          "logK1_mean": 6.57,
+          "logK1_std": 1.516,
+          "cv": 0.2308,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Al",
+          "charge": 3,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Al+3]<-[O]=C2C=C1",
+          "logK1_mean": 10.715,
+          "logK1_std": 1.747,
+          "cv": 0.163,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ga",
+          "charge": 3,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Ga+3]<-[O]=C2C=C1",
+          "logK1_mean": 9.668,
+          "logK1_std": 1.413,
+          "cv": 0.1461,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        }
+      ],
+      "exp_logKstab": {
+        "Mg": 5.7,
+        "Mn": 7.72,
+        "Fe": 7.95,
+        "Co": 8.6,
+        "Ni": 8.92,
+        "Zn": 9.9,
+        "Cd": 8.2,
+        "Cu": 13.9,
+        "Al": 16.3,
+        "Ga": 18.9
+      },
+      "dft_BE_eV": {
+        "Mg": -0.462,
+        "Mn": -0.571,
+        "Co": -0.943,
+        "Ni": -0.862,
+        "Zn": -0.664,
+        "Cu": -1.28,
+        "Al": -1.665,
+        "Ga": -1.807
+      }
+    },
+    "BPY": {
+      "ligand": "BPY",
+      "ligand_smiles": "n1ccccc1-c2ccccn2",
+      "donor_threshold": 0.75,
+      "donor_source": "automatic",
+      "predicted_donor_atoms": [
+        "N",
+        "N"
+      ],
+      "predicted_donor_probs": [
+        0.994,
+        0.994
+      ],
+      "automatic_donor_indices": [
+        0,
+        11
+      ],
+      "automatic_donor_atoms": [
+        "N",
+        "N"
+      ],
+      "all_atom_donor_probs": [
+        [
+          "N",
+          0.994
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "N",
+          0.994
+        ]
+      ],
+      "predicted_donor_indices": [
+        0,
+        11
+      ],
+      "metals": [
+        {
+          "metal": "Mg",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Mg+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 0.658,
+          "logK1_std": 0.195,
+          "cv": 0.2972,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Mn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Mn+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 2.098,
+          "logK1_std": 0.448,
+          "cv": 0.2137,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Fe",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Fe+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 4.201,
+          "logK1_std": 0.367,
+          "cv": 0.0874,
+          "scenario": "A",
+          "scenario_description": "Trustworthy (high consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Co",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Co+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 5.496,
+          "logK1_std": 0.408,
+          "cv": 0.0742,
+          "scenario": "B",
+          "scenario_description": "Overconfident (high consensus + low XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ni",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Ni+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 7.531,
+          "logK1_std": 0.583,
+          "cv": 0.0774,
+          "scenario": "A",
+          "scenario_description": "Trustworthy (high consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Zn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Zn+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 4.706,
+          "logK1_std": 0.68,
+          "cv": 0.1444,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Cd+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 4.486,
+          "logK1_std": 1.157,
+          "cv": 0.258,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Pb",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1cc[n]2->[Pb+2]<-[n]3ccccc3-c2c1",
+          "logK1_mean": 3.413,
+          "logK1_std": 1.079,
+          "cv": 0.316,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        }
+      ],
+      "exp_logKstab": {
+        "Mg": 0.28,
+        "Mn": 2.62,
+        "Fe": 4.2,
+        "Co": 5.8,
+        "Ni": 7.04,
+        "Zn": 5.13,
+        "Cd": 4.18,
+        "Pb": 2.9
+      },
+      "dft_BE_eV": {
+        "Mg": -1.36,
+        "Mn": -1.65,
+        "Fe": -1.92,
+        "Co": -2.12,
+        "Ni": -2.3,
+        "Zn": -1.95,
+        "Cd": -1.79,
+        "Pb": -1.59
+      }
+    },
+    "PHEN": {
+      "ligand": "PHEN",
+      "ligand_smiles": "c1ccc2nc3ccccc3nc2c1",
+      "donor_threshold": 0.75,
+      "donor_source": "automatic",
+      "predicted_donor_atoms": [
+        "N",
+        "N"
+      ],
+      "predicted_donor_probs": [
+        0.994,
+        0.994
+      ],
+      "automatic_donor_indices": [
+        4,
+        11
+      ],
+      "automatic_donor_atoms": [
+        "N",
+        "N"
+      ],
+      "all_atom_donor_probs": [
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "N",
+          0.994
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "N",
+          0.994
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.0
+        ]
+      ],
+      "predicted_donor_indices": [
+        4,
+        11
+      ],
+      "metals": [
+        {
+          "metal": "Mg",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Mg+2]<-[n]2c2ccccc21",
+          "logK1_mean": 0.807,
+          "logK1_std": 0.208,
+          "cv": 0.2578,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Mn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Mn+2]<-[n]2c2ccccc21",
+          "logK1_mean": 5.214,
+          "logK1_std": 0.675,
+          "cv": 0.1294,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Fe",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Fe+2]<-[n]2c2ccccc21",
+          "logK1_mean": 6.311,
+          "logK1_std": 1.444,
+          "cv": 0.2288,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Co",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Co+2]<-[n]2c2ccccc21",
+          "logK1_mean": 8.919,
+          "logK1_std": 1.174,
+          "cv": 0.1316,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ni",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Ni+2]<-[n]2c2ccccc21",
+          "logK1_mean": 11.219,
+          "logK1_std": 0.686,
+          "cv": 0.0612,
+          "scenario": "A",
+          "scenario_description": "Trustworthy (high consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Zn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Zn+2]<-[n]2c2ccccc21",
+          "logK1_mean": 9.07,
+          "logK1_std": 0.974,
+          "cv": 0.1074,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Cd+2]<-[n]2c2ccccc21",
+          "logK1_mean": 7.856,
+          "logK1_std": 0.818,
+          "cv": 0.1041,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Pb",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2c(c1)[n]1->[Pb+2]<-[n]2c2ccccc21",
+          "logK1_mean": 5.051,
+          "logK1_std": 2.076,
+          "cv": 0.4109,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        }
+      ],
+      "exp_logKstab": {
+        "Mg": 1.2,
+        "Mn": 4.0,
+        "Fe": 5.85,
+        "Co": 7.08,
+        "Ni": 8.6,
+        "Zn": 6.4,
+        "Cd": 5.8,
+        "Pb": 4.65
+      },
+      "dft_BE_eV": {
+        "Mg": -1.44,
+        "Mn": -1.73,
+        "Fe": -1.92,
+        "Co": -2.17,
+        "Ni": -2.35,
+        "Zn": -2.02,
+        "Cd": -1.88,
+        "Pb": -1.67
+      }
+    },
+    "BQ": {
+      "ligand": "BQ",
+      "ligand_smiles": "O=C1C=CC=CC1=O",
+      "donor_threshold": 0.75,
+      "donor_source": "manual_override",
+      "predicted_donor_atoms": [
+        "O",
+        "O"
+      ],
+      "predicted_donor_probs": [
+        0.836,
+        0.836
+      ],
+      "automatic_donor_indices": [
+        0,
+        7
+      ],
+      "automatic_donor_atoms": [
+        "O",
+        "O"
+      ],
+      "all_atom_donor_probs": [
+        [
+          "O",
+          0.836
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "C",
+          0.969
+        ],
+        [
+          "C",
+          0.972
+        ],
+        [
+          "C",
+          0.972
+        ],
+        [
+          "C",
+          0.969
+        ],
+        [
+          "C",
+          0.0
+        ],
+        [
+          "O",
+          0.836
+        ]
+      ],
+      "predicted_donor_indices": [
+        0,
+        7
+      ],
+      "metals": [
+        {
+          "metal": "Mg",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Mg+2]<-[O]=C2C=C1",
+          "logK1_mean": 2.219,
+          "logK1_std": 0.373,
+          "cv": 0.168,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Mn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Mn+2]<-[O]=C2C=C1",
+          "logK1_mean": 3.535,
+          "logK1_std": 1.015,
+          "cv": 0.2872,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Fe",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Fe+2]<-[O]=C2C=C1",
+          "logK1_mean": 7.321,
+          "logK1_std": 2.316,
+          "cv": 0.3164,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Co",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Co+2]<-[O]=C2C=C1",
+          "logK1_mean": 4.269,
+          "logK1_std": 0.89,
+          "cv": 0.2085,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ni",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Ni+2]<-[O]=C2C=C1",
+          "logK1_mean": 3.99,
+          "logK1_std": 0.806,
+          "cv": 0.202,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Zn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Zn+2]<-[O]=C2C=C1",
+          "logK1_mean": 4.674,
+          "logK1_std": 0.938,
+          "cv": 0.2006,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Cd+2]<-[O]=C2C=C1",
+          "logK1_mean": 4.245,
+          "logK1_std": 0.849,
+          "cv": 0.2001,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cu",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Cu+2]<-[O]=C2C=C1",
+          "logK1_mean": 6.57,
+          "logK1_std": 1.516,
+          "cv": 0.2308,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Al",
+          "charge": 3,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Al+3]<-[O]=C2C=C1",
+          "logK1_mean": 10.715,
+          "logK1_std": 1.747,
+          "cv": 0.163,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ga",
+          "charge": 3,
+          "status": "OK",
+          "complex_smiles": "C1=CC2=[O]->[Ga+3]<-[O]=C2C=C1",
+          "logK1_mean": 9.668,
+          "logK1_std": 1.413,
+          "cv": 0.1461,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        }
+      ],
+      "exp_logKstab": {
+        "Mg": 5.7,
+        "Mn": 7.72,
+        "Fe": 7.95,
+        "Co": 8.6,
+        "Ni": 8.92,
+        "Zn": 9.9,
+        "Cd": 8.2,
+        "Cu": 13.9,
+        "Al": 16.3,
+        "Ga": 18.9
+      },
+      "dft_BE_eV": {
+        "Mg": -0.462,
+        "Mn": -0.571,
+        "Co": -0.943,
+        "Ni": -0.862,
+        "Zn": -0.664,
+        "Cu": -1.28,
+        "Al": -1.665,
+        "Ga": -1.807
+      }
+    },
+    "BDT": {
+      "ligand": "BDT",
+      "ligand_smiles": "Sc1ccccc1S",
+      "donor_threshold": 0.5,
+      "donor_source": "automatic",
+      "predicted_donor_atoms": [
+        "S",
+        "S"
+      ],
+      "predicted_donor_probs": [
+        0.576,
+        0.576
+      ],
+      "automatic_donor_indices": [
+        0,
+        7
+      ],
+      "automatic_donor_atoms": [
+        "S",
+        "S"
+      ],
+      "all_atom_donor_probs": [
+        [
+          "S",
+          0.576
+        ],
+        [
+          "C",
+          0.32
+        ],
+        [
+          "C",
+          0.262
+        ],
+        [
+          "C",
+          0.225
+        ],
+        [
+          "C",
+          0.225
+        ],
+        [
+          "C",
+          0.262
+        ],
+        [
+          "C",
+          0.32
+        ],
+        [
+          "S",
+          0.576
+        ]
+      ],
+      "predicted_donor_indices": [
+        0,
+        7
+      ],
+      "metals": [
+        {
+          "metal": "Ga",
+          "charge": 3,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Ga+3]<-[SH]c2c1",
+          "logK1_mean": 7.937,
+          "logK1_std": 1.158,
+          "cv": 0.1459,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Pt",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Pt+2]<-[SH]c2c1",
+          "logK1_mean": 13.104,
+          "logK1_std": 1.8,
+          "cv": 0.1374,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Pd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Pd+2]<-[SH]c2c1",
+          "logK1_mean": 17.766,
+          "logK1_std": 4.319,
+          "cv": 0.2431,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Very Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Ni",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Ni+2]<-[SH]c2c1",
+          "logK1_mean": 4.165,
+          "logK1_std": 2.156,
+          "cv": 0.5176,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Al",
+          "charge": 3,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Al+3]<-[SH]c2c1",
+          "logK1_mean": 8.68,
+          "logK1_std": 1.712,
+          "cv": 0.1973,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Co",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Co+2]<-[SH]c2c1",
+          "logK1_mean": 4.817,
+          "logK1_std": 1.557,
+          "cv": 0.3232,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Cd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Cd+2]<-[SH]c2c1",
+          "logK1_mean": 6.125,
+          "logK1_std": 1.1,
+          "cv": 0.1796,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Fe",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Fe+2]<-[SH]c2c1",
+          "logK1_mean": 4.873,
+          "logK1_std": 1.862,
+          "cv": 0.382,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Zn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Zn+2]<-[SH]c2c1",
+          "logK1_mean": 5.402,
+          "logK1_std": 0.721,
+          "cv": 0.1334,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Moderate",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Mn",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Mn+2]<-[SH]c2c1",
+          "logK1_mean": 2.289,
+          "logK1_std": 0.784,
+          "cv": 0.3425,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Mg",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Mg+2]<-[SH]c2c1",
+          "logK1_mean": 1.361,
+          "logK1_std": 0.656,
+          "cv": 0.4817,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Weak",
+          "num_coord_sites": 2
+        }
+      ],
+      "exp_logKstab": null,
+      "dft_BE_eV": {
+        "Ga": -1.289,
+        "Pt": -1.267,
+        "Pd": -1.117,
+        "Ni": -0.582,
+        "Al": -0.401,
+        "Co": -0.381,
+        "Cd": -0.243,
+        "Fe": -0.188,
+        "Zn": -0.173,
+        "Mn": 0.435,
+        "Mg": 0.477
+      }
+    },
+    "AP": {
+      "ligand": "AP",
+      "ligand_smiles": "Nc1ccccc1S",
+      "donor_threshold": 0.5,
+      "donor_source": "automatic",
+      "predicted_donor_atoms": [
+        "N",
+        "S"
+      ],
+      "predicted_donor_probs": [
+        0.988,
+        0.713
+      ],
+      "automatic_donor_indices": [
+        0,
+        7
+      ],
+      "automatic_donor_atoms": [
+        "N",
+        "S"
+      ],
+      "all_atom_donor_probs": [
+        [
+          "N",
+          0.988
+        ],
+        [
+          "C",
+          0.002
+        ],
+        [
+          "C",
+          0.012
+        ],
+        [
+          "C",
+          0.014
+        ],
+        [
+          "C",
+          0.028
+        ],
+        [
+          "C",
+          0.012
+        ],
+        [
+          "C",
+          0.008
+        ],
+        [
+          "S",
+          0.713
+        ]
+      ],
+      "predicted_donor_indices": [
+        0,
+        7
+      ],
+      "metals": [
+        {
+          "metal": "Pd",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Pd+2]<-[NH2]c2c1",
+          "logK1_mean": 14.187,
+          "logK1_std": 3.703,
+          "cv": 0.261,
+          "scenario": "C",
+          "scenario_description": "Underconfident (low consensus + high XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        },
+        {
+          "metal": "Pt",
+          "charge": 2,
+          "status": "OK",
+          "complex_smiles": "c1ccc2[SH]->[Pt+2]<-[NH2]c2c1",
+          "logK1_mean": 8.385,
+          "logK1_std": 2.12,
+          "cv": 0.2528,
+          "scenario": "D",
+          "scenario_description": "Unreliable (low consensus + low XAI agreement)",
+          "binding_category": "Strong",
+          "num_coord_sites": 2
+        }
+      ],
+      "exp_logKstab": null,
+      "dft_BE_eV": {
+        "Pd": -1.036,
+        "Pt": -1.166
+      }
+    }
+  },
+  "summary": {
+    "BQ_auto_uncorrected": {
+      "vs_DFT": {
+        "n_metals": 8,
+        "spearman_rho": 0.905,
+        "spearman_p": 0.002,
+        "pairwise_pct": 89.3,
+        "n_pairs": 28,
+        "n_concordant": 25,
+        "top1_agree": false,
+        "top3_overlap": 3,
+        "coordbind_ranking": [
+          "Al",
+          "Ga",
+          "Cu",
+          "Zn",
+          "Co",
+          "Ni",
+          "Mn",
+          "Mg"
+        ],
+        "dft_ranking": [
+          "Ga",
+          "Al",
+          "Cu",
+          "Co",
+          "Ni",
+          "Zn",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "vs_experiment": {
+        "n_metals": 10,
+        "spearman_rho": 0.77,
+        "spearman_p": 0.0092,
+        "pairwise_pct": 82.2,
+        "n_pairs": 45,
+        "n_concordant": 37,
+        "top1_agree": false,
+        "top3_overlap": 2,
+        "coordbind_ranking": [
+          "Al",
+          "Ga",
+          "Fe",
+          "Cu",
+          "Zn",
+          "Co",
+          "Cd",
+          "Ni",
+          "Mn",
+          "Mg"
+        ],
+        "experiment_ranking": [
+          "Ga",
+          "Al",
+          "Cu",
+          "Zn",
+          "Ni",
+          "Co",
+          "Cd",
+          "Fe",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "scenario_AB_vs_DFT": {
+        "n_metals": 0,
+        "note": "too few for correlation"
+      },
+      "scenario_CD_vs_DFT": {
+        "n_metals": 8,
+        "spearman_rho": 0.905,
+        "pairwise_pct": 89.3
+      }
+    },
+    "BPY": {
+      "vs_DFT": {
+        "n_metals": 8,
+        "spearman_rho": 0.952,
+        "spearman_p": 0.0003,
+        "pairwise_pct": 92.9,
+        "n_pairs": 28,
+        "n_concordant": 26,
+        "top1_agree": true,
+        "top3_overlap": 3,
+        "coordbind_ranking": [
+          "Ni",
+          "Co",
+          "Zn",
+          "Cd",
+          "Fe",
+          "Pb",
+          "Mn",
+          "Mg"
+        ],
+        "dft_ranking": [
+          "Ni",
+          "Co",
+          "Zn",
+          "Fe",
+          "Cd",
+          "Mn",
+          "Pb",
+          "Mg"
+        ]
+      },
+      "vs_experiment": {
+        "n_metals": 8,
+        "spearman_rho": 0.976,
+        "spearman_p": 0.0,
+        "pairwise_pct": 96.4,
+        "n_pairs": 28,
+        "n_concordant": 27,
+        "top1_agree": true,
+        "top3_overlap": 3,
+        "coordbind_ranking": [
+          "Ni",
+          "Co",
+          "Zn",
+          "Cd",
+          "Fe",
+          "Pb",
+          "Mn",
+          "Mg"
+        ],
+        "experiment_ranking": [
+          "Ni",
+          "Co",
+          "Zn",
+          "Fe",
+          "Cd",
+          "Pb",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "scenario_AB_vs_DFT": {
+        "n_metals": 3,
+        "spearman_rho": 1.0,
+        "pairwise_pct": 100.0
+      },
+      "scenario_CD_vs_DFT": {
+        "n_metals": 5,
+        "spearman_rho": 0.9,
+        "pairwise_pct": 90.0
+      }
+    },
+    "PHEN": {
+      "vs_DFT": {
+        "n_metals": 8,
+        "spearman_rho": 0.952,
+        "spearman_p": 0.0003,
+        "pairwise_pct": 92.9,
+        "n_pairs": 28,
+        "n_concordant": 26,
+        "top1_agree": true,
+        "top3_overlap": 3,
+        "coordbind_ranking": [
+          "Ni",
+          "Zn",
+          "Co",
+          "Cd",
+          "Fe",
+          "Mn",
+          "Pb",
+          "Mg"
+        ],
+        "dft_ranking": [
+          "Ni",
+          "Co",
+          "Zn",
+          "Fe",
+          "Cd",
+          "Mn",
+          "Pb",
+          "Mg"
+        ]
+      },
+      "vs_experiment": {
+        "n_metals": 8,
+        "spearman_rho": 0.929,
+        "spearman_p": 0.0009,
+        "pairwise_pct": 89.3,
+        "n_pairs": 28,
+        "n_concordant": 25,
+        "top1_agree": true,
+        "top3_overlap": 3,
+        "coordbind_ranking": [
+          "Ni",
+          "Zn",
+          "Co",
+          "Cd",
+          "Fe",
+          "Mn",
+          "Pb",
+          "Mg"
+        ],
+        "experiment_ranking": [
+          "Ni",
+          "Co",
+          "Zn",
+          "Fe",
+          "Cd",
+          "Pb",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "scenario_AB_vs_DFT": {
+        "n_metals": 1,
+        "note": "too few for correlation"
+      },
+      "scenario_CD_vs_DFT": {
+        "n_metals": 7,
+        "spearman_rho": 0.929,
+        "pairwise_pct": 90.5
+      }
+    },
+    "BQ": {
+      "vs_DFT": {
+        "n_metals": 8,
+        "spearman_rho": 0.905,
+        "spearman_p": 0.002,
+        "pairwise_pct": 89.3,
+        "n_pairs": 28,
+        "n_concordant": 25,
+        "top1_agree": false,
+        "top3_overlap": 3,
+        "coordbind_ranking": [
+          "Al",
+          "Ga",
+          "Cu",
+          "Zn",
+          "Co",
+          "Ni",
+          "Mn",
+          "Mg"
+        ],
+        "dft_ranking": [
+          "Ga",
+          "Al",
+          "Cu",
+          "Co",
+          "Ni",
+          "Zn",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "vs_experiment": {
+        "n_metals": 10,
+        "spearman_rho": 0.77,
+        "spearman_p": 0.0092,
+        "pairwise_pct": 82.2,
+        "n_pairs": 45,
+        "n_concordant": 37,
+        "top1_agree": false,
+        "top3_overlap": 2,
+        "coordbind_ranking": [
+          "Al",
+          "Ga",
+          "Fe",
+          "Cu",
+          "Zn",
+          "Co",
+          "Cd",
+          "Ni",
+          "Mn",
+          "Mg"
+        ],
+        "experiment_ranking": [
+          "Ga",
+          "Al",
+          "Cu",
+          "Zn",
+          "Ni",
+          "Co",
+          "Cd",
+          "Fe",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "scenario_AB_vs_DFT": {
+        "n_metals": 0,
+        "note": "too few for correlation"
+      },
+      "scenario_CD_vs_DFT": {
+        "n_metals": 8,
+        "spearman_rho": 0.905,
+        "pairwise_pct": 89.3
+      }
+    },
+    "BDT": {
+      "vs_DFT": {
+        "n_metals": 11,
+        "spearman_rho": 0.727,
+        "spearman_p": 0.0112,
+        "pairwise_pct": 76.4,
+        "n_pairs": 55,
+        "n_concordant": 42,
+        "top1_agree": false,
+        "top3_overlap": 2,
+        "coordbind_ranking": [
+          "Pd",
+          "Pt",
+          "Al",
+          "Ga",
+          "Cd",
+          "Zn",
+          "Fe",
+          "Co",
+          "Ni",
+          "Mn",
+          "Mg"
+        ],
+        "dft_ranking": [
+          "Ga",
+          "Pt",
+          "Pd",
+          "Ni",
+          "Al",
+          "Co",
+          "Cd",
+          "Fe",
+          "Zn",
+          "Mn",
+          "Mg"
+        ]
+      },
+      "scenario_AB_vs_DFT": {
+        "n_metals": 0,
+        "note": "too few for correlation"
+      },
+      "scenario_CD_vs_DFT": {
+        "n_metals": 11,
+        "spearman_rho": 0.727,
+        "pairwise_pct": 76.4
+      }
+    },
+    "AP": {}
+  }
+}

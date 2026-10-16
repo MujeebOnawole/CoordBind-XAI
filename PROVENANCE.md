@@ -89,3 +89,15 @@ Two different evaluations exist and report different ligand counts.
   construction. Reported per metal; the manuscript quotes the copper figures.
 
 6,616 − 280 = 6,336. Both numbers are correct and refer to different experiments.
+
+## DFT external validation
+
+`results/validation/dft_validation_results.json` was produced on 13 September
+2026 by `src/validation/run_dft_external_validation.py` against the deployed web
+tool, which serves the five best-per-fold Run 3 checkpoints and the
+coordination-only ensemble. It is therefore a Run 3 result. The file also holds
+an `BQ_auto_uncorrected` block: for 1,2-benzoquinone the coordination model at
+threshold 0.75 selects the two carbonyl oxygens (P = 0.836) and, in the full
+per-atom output, also scores the four ring CH carbons above 0.96. The ranking
+test uses the O,O donor set only; the uncorrected block is kept so that this
+behaviour is on record.

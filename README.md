@@ -66,6 +66,30 @@ interpretability and pipeline capability they provide.
 | Without coordination supervision | 0.967 | 1.039 ± 0.027 | +0.6% |
 | Without `METAL_COORD` relation | 0.972 | 1.063 ± 0.027 | +1.1% |
 
+### External validation against DFT
+
+Ranking agreement with the spin-polarised DFT benchmark of Zhang et al. (2026,
+*J. Phys. Chem. A*) for bidentate aromatic ligands. The donor set comes from the
+coordination model, the complex is built automatically, and the metals are
+ordered by predicted log K1. ρ is the Spearman rank correlation and pairwise is
+the fraction of metal pairs ordered identically. Experimental rankings are those
+compiled in the DFT study.
+
+| Ligand | Donor set | Metals | ρ vs DFT | Pairwise vs DFT | ρ vs experiment | Pairwise vs experiment |
+|---|---|---|---|---|---|---|
+| 2,2′-Bipyridine | N,N (P ≥ 0.99) | 8 | 0.952 | 92.9% | 0.976 | 96.4% |
+| 1,10-Phenanthroline | N,N (P ≥ 0.99) | 8 | 0.952 | 92.9% | 0.929 | 89.3% |
+| 1,2-Benzoquinone | O,O (P = 0.836) | 8 | 0.905 | 89.3% | 0.770 | 82.2% |
+| o-Benzenedithiol | S,S (P = 0.576, threshold 0.50) | 11 | 0.727 | 76.4% | n/a | n/a |
+
+The nitrogen and oxygen donor ligands reproduce the DFT ordering closely. The
+soft S,S donor gives the weakest agreement: both sulfurs fall below the 0.75
+default donor threshold, which was lowered to 0.50 for that ligand, and the
+Pt(II)/Pd(II) order is reversed. Per-metal predictions, ensemble spread,
+Scenario labels and the reference values are in
+`results/validation/dft_validation_results.json`
+(manuscript Table 8 and Table S13).
+
 ## Scope
 
 Reliable as an early-stage ranking and triage step for **mono- and bidentate
@@ -101,6 +125,8 @@ results/canonical    Run 3 metrics, predictions, XAI attributions
 results/ablations    T1/T2/T3 architecture ablations
 results/diagnostics  calibration, variance decomposition, scaffold overlap
 results/coord_only   Toney benchmark evaluation
+results/validation   DFT ranking benchmark (Zhang et al. 2026)
+src/validation/      script that regenerates results/validation/
 ```
 
 ## Pipeline
@@ -116,6 +142,23 @@ src/binding/analyze_xai_chemistry.py   Irving-Williams, HSAB, lanthanide checks
 
 The coordination-only model follows the same order under `src/coord_only/`,
 ending at `eval_toney.py`.
+
+### Regenerating the DFT validation
+
+`src/validation/run_dft_external_validation.py` calls the same prediction
+functions as the web tool so that the published numbers and the deployed tool
+cannot drift apart. The web tool and its checkpoints live in a separate
+repository, so clone it and point the script at the clone:
+
+```
+git clone https://huggingface.co/spaces/catenate/metal-ligand-binding
+export COORDBIND_WEBTOOL_DIR=/path/to/metal-ligand-binding
+python src/validation/run_dft_external_validation.py
+```
+
+It writes `results/validation/dft_validation_results.json`. Reference DFT
+binding energies and experimental log K values are transcribed inside the
+script from the benchmark paper.
 
 Scripts resolve `data/` from the repository root automatically. Training was run
 on a SLURM cluster; the job scripts are deliberately not included because they
